@@ -34,12 +34,6 @@ int main()
     case 20:
         cout << "20 ans";
         return;
-    case 30:
-        cout << "30 ans";
-        return;
-    case 40:
-        cout << "40 ans";
-        return;
     default:
         cout << "autres";
         return;
