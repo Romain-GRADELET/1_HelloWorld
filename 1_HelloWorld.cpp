@@ -1,6 +1,7 @@
 
 #include <iostream>
 
+/*********************************************/
 int age = 10; // - ~32 000 à ~32 000
 unsigned int monUint = 50; // 0 à 65 000
 
@@ -12,38 +13,19 @@ bool estVrai = true; // (ou false)
 char charactère = 'a';
 
 std::string texte = "Mon texte";
-
+/*********************************************/
 
 int main()
 {
-    std::cout << "age 1 = ";
-    std::cout << age;
-    std::cout << "\n";
+    std::cout << "saisir un nombre :  ";
     
-    std::cout << texte;
-    std::cout << "\n";
+    int nb{};
 
-    age = 5;
-    std::cout << "age 2 = ";
-    std::cout << age;
+    std::cin >> nb;
 
-    // system("PAUSE");
+    std::cout << "Vous avez saisi : " << nb << "\n";
+    std::cout << "le double de : " << nb << " est : " << nb*2 << "\n";
+
     return 0;
 
-}
-
-bool isAdmin()
-{
-    return true;
-}
-
-
-int add(int nombre) 
-{
-    return nombre + 5;
-}
-
-void afficher()
-{
-    std::cout << "Message";
 }
