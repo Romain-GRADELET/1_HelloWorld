@@ -1,31 +1,81 @@
+/*********************************************/
+    //int age = 10; // - ~32 000 à ~32 000
+    //unsigned int monUint = 50; // 0 à 65 000
+
+    //float price = 5.2;
+    //double price2 = 5.22;
+
+    //bool estVrai = true; // (ou false)
+
+    //char charactère = 'a';
+
+    //std::string texte = "Mon texte";
+/*********************************************/
+    // Retour à la ligne 
+    // "\n" ou << std::endl
+/*********************************************/
 
 #include <iostream>
+#include "./math.h"
+using namespace std;
 
-/*********************************************/
-int age = 10; // - ~32 000 à ~32 000
-unsigned int monUint = 50; // 0 à 65 000
 
-float price = 5.2;
-double price2 = 5.22;
-
-bool estVrai = true; // (ou false)
-
-char charactère = 'a';
-
-std::string texte = "Mon texte";
-/*********************************************/
+int getNum();
 
 int main()
 {
-    std::cout << "saisir un nombre :  ";
-    
-    int nb{};
+    int age { getNum() };
 
-    std::cin >> nb;
+    switch (age)
+    {
+    case 10 :
+        cout << "10 ans";
+        return;
+    case 20:
+        cout << "20 ans";
+        return;
+    case 30:
+        cout << "30 ans";
+        return;
+    case 40:
+        cout << "40 ans";
+        return;
+    default:
+        cout << "autres";
+        return;
+    }
 
-    std::cout << "Vous avez saisi : " << nb << "\n";
-    std::cout << "le double de : " << nb << " est : " << nb*2 << "\n";
+    if (age >= 18)
+    {
+        cout << "Est majeur";
+    }
+    else
+    {
+        cout << "Est mineur";
+    }
+
+
+    /*int num1 { getNum() };
+    int num2 { getNum() };
+
+    cout << "Calcul : " << num1 << " / " << num2 << " = " << Divide(num1, num2);*/
 
     return 0;
+}
 
+int getNum() 
+{
+    int num{};
+    cout << "Saisir un nombre: ";
+    cin >> num;
+
+    if (num != 0)
+    {
+        return num;
+    }
+    else
+    {
+        cout << "Veuillez saisir un nombre différent de 0 \n";
+        getNum();
+    }
 }
