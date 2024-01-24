@@ -32,20 +32,23 @@ int main()
 {
     int num{};
     
-    etapePremiere:
-
-    cout << "Choisir un nombre différent de 0 " << endl;
+    cout << "Choisir un nombre " << endl;
     cin >> num;
 
-        if (num == 0)
-        {
-            cout << "Erreur" << endl;
-            goto etapePremiere;
-        }
-        else
-        {
-            cout << "Bravo";
-        }
+    /*while (num != 0)
+    {
+        cout << num << endl;
+        num--;
+    }*/
+
+    for (int i = num; i <=10000 ; i++)
+    {
+        cout << i << endl;
+    }
+
+
+    cout << "Bravo";
+
 
 
 
