@@ -31,57 +31,22 @@ enum badge
 
 /***** Prototype *****/
 
-void show(char*);
-void show(string s);
-void encrypt(char*);
-void decrypt(char*);
 
 /*********************/
+
 int main()
 {
-    char mot[10]; // 'S' 'A' 'L' 'U' 'T'
-    string phrase;
+    int nombre{ 5 };
+    int* monPointeur, val;
 
+    val = 10;
+    monPointeur = &val;
 
-    cout << "Saisir 'salut' : ";
-    cin.get(mot, 10);
-    show(mot);
+    cout << "monPointeur = " << *monPointeur << endl;
 
-    cout << "Saisir phrase : " ;
-    cin.ignore();
-    getline(cin, phrase);
-    show(phrase);
-
-    encrypt(mot);
-    decrypt(mot);
+    //cout << "nb = " << nombre << endl;
+    // & va permettre d'obtenir l'adresse memoire
+    //cout << "adresse memoire = " << &nombre << endl;
 
     return 0;
-}
-
-void show(char s[])
-{
-    cout << s << endl;
-}
-
-void show(string s)
-{
-    cout << s << endl;
-}
-
-void encrypt(char s[])
-{
-    for (int i = 0; i < 5; i++)
-    {
-        s[i] += 10;
-    }
-    cout << s << endl;
-}
-
-void decrypt(char s[])
-{
-    for (int i = 0; i < 5; i++)
-    {
-        s[i] -= 10;
-    }
-    cout << s << endl;
 }
