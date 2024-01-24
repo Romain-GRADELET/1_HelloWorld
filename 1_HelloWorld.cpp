@@ -44,6 +44,10 @@ int main()
     for (int i = num; i <=10000 ; i++)
     {
         cout << i << endl;
+        if (i == 500)
+        {
+            break;
+        }
     }
 
 
