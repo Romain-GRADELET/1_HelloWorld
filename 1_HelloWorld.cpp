@@ -20,112 +20,62 @@
 using namespace std;
 
 
-int getNum();
-void acheter(int qte);
-
-int argent{ 500 };
-int stock{ 3 };
-int price{ 50 };
-bool isOnline = true;
+enum badge
+{
+    bronze, // =0
+    silver, // =1
+    gold,   // =2
+};
 
 int main()
 {
-    int num{};
-    
-    cout << "Choisir un nombre " << endl;
-    cin >> num;
+    badge userBadge{};
+    userBadge = bronze;
 
-    /*while (num != 0)
+    if (userBadge == 2)
     {
-        cout << num << endl;
-        num--;
-    }*/
-
-    for (int i = num; i <=10000 ; i++)
-    {
-        cout << i << endl;
-        if (i == 500)
-        {
-            break;
-        }
-    }
-
-
-    cout << "Bravo";
-
-
-
-
-
-
-
-
-
-
-   /* int age { getNum() };
-
-    switch (age)
-    {
-    case 10 :
-        cout << "10 ans";
-        return;
-    case 20:
-        cout << "20 ans";
-        return;
-    default:
-        cout << "autres";
-        return;
-    }
-
-    if (age >= 18)
-    {
-        cout << "Est majeur";
+        cout << "PREMIUM" << endl;
     }
     else
     {
-        cout << "Est mineur";
-    }*/
+        cout << "PAS PREMIUM" << endl;
+    }
 
-
-    /*int num1 { getNum() };
-    int num2 { getNum() };
-
-    cout << "Calcul : " << num1 << " / " << num2 << " = " << Divide(num1, num2);*/
 
     return 0;
 }
 
-int getNum() 
-{
-    int num{};
-    cout << "Saisir un nombre: ";
-    cin >> num;
+//int getNum() 
+//{
+//    int num{};
+//    cout << "Saisir un nombre: ";
+//    cin >> num;
+//
+//    if (num != 0)
+//    {
+//        return num;
+//    }
+//    else
+//    {
+//        cout << "Veuillez saisir un nombre différent de 0 \n";
+//        getNum();
+//    }
+//}
 
-    if (num != 0)
-    {
-        return num;
-    }
-    else
-    {
-        cout << "Veuillez saisir un nombre différent de 0 \n";
-        getNum();
-    }
-}
-
-void acheter(int qte)
-{
-    cout << "qte = " << qte << endl;
-    cout << "type 2 = " << typeid(qte).name() << endl;
-
-    if ((qte * price) <= argent)
-    {
-        cout << "Achat OK \n";
-        argent -= (qte * price);
-        cout << "Il vous reste : " << argent << "euro \n";
-    }
-    else
-    {
-        cout << "Pas assez d'argent";
-
-    }
-}
+//void acheter(int qte)
+//{
+//    cout << "qte = " << qte << endl;
+//    cout << "type 2 = " << typeid(qte).name() << endl;
+//
+//    if ((qte * price) <= argent)
+//    {
+//        cout << "Achat OK \n";
+//        argent -= (qte * price);
+//        cout << "Il vous reste : " << argent << "euro \n";
+//    }
+//    else
+//    {
+//        cout << "Pas assez d'argent";
+//
+//    }
+//}
