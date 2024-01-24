@@ -21,10 +21,36 @@ using namespace std;
 
 
 int getNum();
+void acheter(int qte);
+
+int argent{ 500 };
+int stock{ 3 };
+int price{ 50 };
+bool isOnline = true;
 
 int main()
 {
-    int age { getNum() };
+    unsigned int num{};
+    cout << "type 1 = " << typeid(num).name() << endl;
+    cout << "Choisir une quantite: ";
+    cin >> num;
+
+        if ((stock >= num) && (isOnline))
+        {
+            int val{};
+            val = static_cast<int>(num);
+            acheter(val);
+        }
+        else
+        {
+            cout << "Pas assez de stock";
+        }
+    
+
+
+
+
+   /* int age { getNum() };
 
     switch (age)
     {
@@ -46,7 +72,7 @@ int main()
     else
     {
         cout << "Est mineur";
-    }
+    }*/
 
 
     /*int num1 { getNum() };
@@ -71,5 +97,23 @@ int getNum()
     {
         cout << "Veuillez saisir un nombre différent de 0 \n";
         getNum();
+    }
+}
+
+void acheter(int qte)
+{
+    cout << "qte = " << qte << endl;
+    cout << "type 2 = " << typeid(qte).name() << endl;
+
+    if ((qte * price) <= argent)
+    {
+        cout << "Achat OK \n";
+        argent -= (qte * price);
+        cout << "Il vous reste : " << argent << "euro \n";
+    }
+    else
+    {
+        cout << "Pas assez d'argent";
+
     }
 }
