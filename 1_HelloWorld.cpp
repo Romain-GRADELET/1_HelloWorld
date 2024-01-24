@@ -30,22 +30,27 @@ bool isOnline = true;
 
 int main()
 {
-    unsigned int num{};
-    cout << "type 1 = " << typeid(num).name() << endl;
-    cout << "Choisir une quantite: ";
+    int num{};
+    
+    etapePremiere:
+
+    cout << "Choisir un nombre différent de 0 " << endl;
     cin >> num;
 
-        if ((stock >= num) && (isOnline))
+        if (num == 0)
         {
-            int val{};
-            val = static_cast<int>(num);
-            acheter(val);
+            cout << "Erreur" << endl;
+            goto etapePremiere;
         }
         else
         {
-            cout << "Pas assez de stock";
+            cout << "Bravo";
         }
-    
+
+
+
+
+
 
 
 
