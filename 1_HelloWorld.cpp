@@ -18,6 +18,7 @@
 #include <iostream>
 #include "./math.h"
 #include <array>
+#include <string>
 using namespace std;
 
 
@@ -28,60 +29,59 @@ enum badge
     gold,   // =2
 };
 
+/***** Prototype *****/
+
+void show(char*);
+void show(string s);
+void encrypt(char*);
+void decrypt(char*);
+
+/*********************/
 int main()
 {
-    int agesBase[10] = { 10 ,12 ,19 ,21 ,6 ,4 ,17 ,22 ,33 ,18 };
+    char mot[10]; // 'S' 'A' 'L' 'U' 'T'
+    string phrase;
 
-    array<int, 10> ages = { 10 ,12 ,19 ,21 ,6 ,4 ,17 ,22 ,33 ,18 };
 
-    int nbMajeur{ 0 };
+    cout << "Saisir 'salut' : ";
+    cin.get(mot, 10);
+    show(mot);
 
-    for (int i = 0; i < ages.size(); i++)
-    {
-        if (ages[i] >= 18)
-        {
-            nbMajeur++;
-        }
-    }
+    cout << "Saisir phrase : " ;
+    cin.ignore();
+    getline(cin, phrase);
+    show(phrase);
 
-    cout << "NB de majeur: " << nbMajeur << endl;
-
-    cout << "Size de agesBase: " << end(agesBase) - begin(agesBase) << endl;
+    encrypt(mot);
+    decrypt(mot);
 
     return 0;
 }
 
-//int getNum() 
-//{
-//    int num{};
-//    cout << "Saisir un nombre: ";
-//    cin >> num;
-//
-//    if (num != 0)
-//    {
-//        return num;
-//    }
-//    else
-//    {
-//        cout << "Veuillez saisir un nombre différent de 0 \n";
-//        getNum();
-//    }
-//}
+void show(char s[])
+{
+    cout << s << endl;
+}
 
-//void acheter(int qte)
-//{
-//    cout << "qte = " << qte << endl;
-//    cout << "type 2 = " << typeid(qte).name() << endl;
-//
-//    if ((qte * price) <= argent)
-//    {
-//        cout << "Achat OK \n";
-//        argent -= (qte * price);
-//        cout << "Il vous reste : " << argent << "euro \n";
-//    }
-//    else
-//    {
-//        cout << "Pas assez d'argent";
-//
-//    }
-//}
+void show(string s)
+{
+    cout << s << endl;
+}
+
+void encrypt(char s[])
+{
+    for (int i = 0; i < 5; i++)
+    {
+        s[i] += 10;
+    }
+    cout << s << endl;
+}
+
+void decrypt(char s[])
+{
+    for (int i = 0; i < 5; i++)
+    {
+        s[i] -= 10;
+    }
+    cout << s << endl;
+}
