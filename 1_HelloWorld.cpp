@@ -17,6 +17,7 @@
 
 #include <iostream>
 #include "./math.h"
+#include <array>
 using namespace std;
 
 
@@ -29,18 +30,23 @@ enum badge
 
 int main()
 {
-    badge userBadge{};
-    userBadge = bronze;
+    int agesBase[10] = { 10 ,12 ,19 ,21 ,6 ,4 ,17 ,22 ,33 ,18 };
 
-    if (userBadge == 2)
+    array<int, 10> ages = { 10 ,12 ,19 ,21 ,6 ,4 ,17 ,22 ,33 ,18 };
+
+    int nbMajeur{ 0 };
+
+    for (int i = 0; i < ages.size(); i++)
     {
-        cout << "PREMIUM" << endl;
-    }
-    else
-    {
-        cout << "PAS PREMIUM" << endl;
+        if (ages[i] >= 18)
+        {
+            nbMajeur++;
+        }
     }
 
+    cout << "NB de majeur: " << nbMajeur << endl;
+
+    cout << "Size de agesBase: " << end(agesBase) - begin(agesBase) << endl;
 
     return 0;
 }
